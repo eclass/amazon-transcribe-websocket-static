@@ -16,6 +16,9 @@
 
         <div id="error" class="isa_error"></div>
 
+        <p>Presione el botón "<i class="fa fa-microphone"></i> Iniciar" y pronuncie el texto a continuación, cuando termine presione el botón "<i
+            class="fa fa-stop-circle"></i> Parar".</p>
+
         <div class="row">
             <div class="col" style="visibility: hidden">
                 <label>Access ID:</label>
@@ -24,6 +27,15 @@
                 <input type="password" id="secret_key" placeholder="SECRET KEY" value="EOsCqGlLNhtzOsOxV8bStyvBjUzeg+KuejPJnGQI" />
                 <label>Session Token (if using MFA):</label>
                 <input type="password" id="session_token" placeholder="SESSION TOKEN" value="" />
+                <label>Region:</label>
+                <select id="region">
+                    <option value="us-east-1" selected="selected">US East (N. Virginia)</option>
+                    <option value="us-east-2">US East (Ohio)</option>
+                    <option value="us-west-2">US West (Oregon)</option>
+                    <option value="ap-southeast-2">Asia Pacific (Sydney)</option>
+                    <option value="ca-central-1">Canada (Central)</option>
+                    <option value="eu-west-1">EU (Ireland)</option>
+                </select>
             </div>
             <div class="col">
                 <label>Idioma: </label>
@@ -41,27 +53,17 @@
                         <option value="es-US" selected="selected">US Spanish (es-US)</option>
                     </optgroup>
                 </select>
-
-                <label style="visibility: hidden">Region:</label>
-                <select id="region" style="visibility: hidden">
-                    <option value="us-east-1" selected="selected">US East (N. Virginia)</option>
-                    <option value="us-east-2">US East (Ohio)</option>
-                    <option value="us-west-2">US West (Oregon)</option>
-                    <option value="ap-southeast-2">Asia Pacific (Sydney)</option>
-                    <option value="ca-central-1">Canada (Central)</option>
-                    <option value="eu-west-1">EU (Ireland)</option>
-                </select>
             </div>
         </div>
+
+        <div>&nbsp;</div>
+        <div><textarea id="text" placeholder="Texto a decir" rows="5" cols="100" readonly="readonly"></textarea></div>
+        
+        <div><textarea id="transcript" placeholder="Precione Iniciar para empezar a grabar" rows="5" cols="100" readonly="readonly"></textarea></div>
 
         <div id="result"></div>
         <div>&nbsp;</div>
 
-        <p>Presione el botón "<i class="fa fa-microphone"></i> Iniciar" y pronuncie el texto a continuación, cuando termine presione el botón "<i
-            class="fa fa-stop-circle"></i> Parar".</p>
-        <div><textarea id="text" placeholder="Texto a decir" rows="5" cols="100" readonly="readonly"></textarea></div>
-        
-        <div><textarea id="transcript" placeholder="Precione Iniciar para empezar a grabar" rows="5" cols="100" readonly="readonly"></textarea></div>
         <div class="row">
             <div class="col">
                 <button id="start-button" class="button-xl" title="Start Transcription">
